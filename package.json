@@ -1,0 +1,13 @@
+{
+  "name": "api-sigarra",
+  "version": "1.0.0",
+  "description": "Developing an API for the Sigarra platform of the Faculty of Engineering of the University of Porto",
+  "main": "index.js",
+  "repository": "http://github.com/NIAEFEUP/api-sigarra",
+  "author": "NIAEFEUP",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
