@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Developing an API for the Sigarra platform of the Faculty of Engineering of the University of Porto",
   "main": "index.js",
+  "scripts": {
+    "test": "yarn mocha"
+  },
   "repository": "http://github.com/NIAEFEUP/api-sigarra",
   "author": "NIAEFEUP",
   "license": "MIT",
