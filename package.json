@@ -6,12 +6,12 @@
   "scripts": {
     "start": "node index.js",
     "test": "yarn mocha",
-    "lint": "npx eslint \"**/*.js\""
+    "lint": "npx eslint \"**/*.js\" --fix"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
-      "pre-push": "npm test && npm run lint"
+      "pre-push": "npm run lint && npm test"
     }
   },
   "repository": "http://github.com/NIAEFEUP/api-sigarra",
