@@ -10,7 +10,7 @@ services:
        - .:/usr/app
     links:
       - mongodb
-    command: yarn start
+    command: yarn test
   mongodb:
     image: mongo:4.0
     container_name: api-sigarra-mongo
