@@ -15,8 +15,7 @@ Made with ❤️  by NIAEFEUP.
 - [`Docker`](https://www.docker.com)
 
 ### Installing 
-Install the package dependencies by running `yarn install`
-Then you'll need to build the images for both the application and the 
+Uou'll need to build the images for both the application and the 
 database services. To do that, run `docker-compose build`.
 
 ### Running the tests
