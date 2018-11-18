@@ -15,7 +15,7 @@ Made with ❤️  by NIAEFEUP.
 - [`Docker`](https://www.docker.com)
 
 ### Installing 
-Uou'll need to build the images for both the application and the 
+You'll need to build the images for both the application and the 
 database services. To do that, run `docker-compose build`.
 ### Running the tests
 To run the tests run `docker-compose -f docker.compose-test.yml up`.
