@@ -17,12 +17,11 @@ Made with ❤️  by NIAEFEUP.
 ### Installing 
 Uou'll need to build the images for both the application and the 
 database services. To do that, run `docker-compose build`.
-
 ### Running the tests
-To run the tests run `docker-compose up -f docker.compose-test.yml`.
+To run the tests run `docker-compose -f docker.compose-test.yml up`.
 
 ### Running the production app
-Simply run - `docker-compose up -f docker-compose.yml` to run 
+Simply run - `docker-compose -f docker-compose.yml up` to run 
 the production environment;
 
 ### Built with
