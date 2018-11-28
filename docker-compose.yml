@@ -28,12 +28,12 @@ services:
       context: .
       dockerfile: Dockerfile-test
     environment:
-      - PORT=${CONTAINER_PORT}
+      - PORT=3000
     volumes:
       - ./src:/usr/src/api-sigarra/src
       - ./test:/usr/src/api-sigarra/test
     ports:
-      - "${HOST_PORT}:${CONTAINER_PORT}"
+      - "3000:3000"
     links:
       - mongo
   mongo:
