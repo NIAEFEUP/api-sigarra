@@ -30,7 +30,7 @@ services:
       context: .
       dockerfile: Dockerfile-test
       args:
-        test_port: ${CONTAINER_PORT}
+        TEST_PORT: ${CONTAINER_PORT}
     environment:
       - PORT=${CONTAINER_PORT}
       - NODE_ENV=test

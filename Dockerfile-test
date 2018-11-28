@@ -1,9 +1,7 @@
 # Use node 8-LTS
 FROM node:8
 
-ARG test_port
-
-ENV PORT = $test_port
+ARG TEST_PORT
 
 RUN mkdir -p /usr/src/api-sigarra
 WORKDIR /usr/src/api-sigarra
@@ -23,5 +21,5 @@ COPY ./src ./src
 COPY ./test ./test
 
 
-EXPOSE $PORT
+EXPOSE $TEST_PORT
 CMD ["npm", "run", "test"]
