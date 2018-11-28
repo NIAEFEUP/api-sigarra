@@ -12,7 +12,7 @@ env:
   - HOST_PORT=3000 CONTAINER_PORT=3000
 
 script:
-  - docker-compose up --exit-code-from test --build test mongo 
+  - docker-compose up --exit-code-from test test mongo 
 
 cache:
   directories:
