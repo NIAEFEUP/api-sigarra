@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon start",
-    "test": "NODE_ENV=test mocha --exit"
+    "test": "mocha --exit"
   },
   "repository": "http://github.com/NIAEFEUP/api-sigarra",
   "author": "NIAEFEUP",

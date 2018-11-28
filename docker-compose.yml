@@ -9,6 +9,7 @@ services:
       - ${HOST_PORT}:${CONTAINER_PORT}
     environment:
       - PORT=${CONTAINER_PORT}
+      - NODE_ENV=production
     links:
       - mongo
   web-dev:
@@ -17,6 +18,7 @@ services:
       dockerfile: Dockerfile-dev
     environment:
       - PORT=${CONTAINER_PORT}
+      - NODE_ENV=development
     volumes:
       - ./src:/usr/src/api-sigarra/src
     ports:
@@ -27,8 +29,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-test
+    args:
+      test_port: 3000
     environment:
-      - PORT=${CONTAINER_PORT}
+      - NODE_ENV=test
     volumes:
       - ./src:/usr/src/api-sigarra/src
       - ./test:/usr/src/api-sigarra/test
