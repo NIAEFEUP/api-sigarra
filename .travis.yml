@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:  
+  - "node"
+
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker-compose up --exit-code-from test test mongo 
+
+cache:
+  directories:
+  - "node_modules"
