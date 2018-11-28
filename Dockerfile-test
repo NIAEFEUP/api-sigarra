@@ -15,9 +15,6 @@ RUN npm install
 # Copying app source
 COPY ./src ./src
 
-# Copying .env file because it is necessary for the app to run
-COPY .env ./
-
 # Copying test suite
 COPY ./test ./test
 
