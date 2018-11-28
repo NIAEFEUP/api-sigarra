@@ -1,20 +1,42 @@
-version: '3.7'
+version: "3"
 services:
-  web:
-    image: node:11
-    container_name: api-sigarra-web
-    build: .
+  web-prod:
+    build: 
+      context: .
+    volumes:
+      - ./src:/usr/src/api-sigarra/src
     ports:
       - ${HOST_PORT}:${CONTAINER_PORT}
-    volumes:
-       - .:/usr/app
+    environment:
+      - PORT=${CONTAINER_PORT}
     links:
-      - mongodb
-    command: yarn start
-  mongodb:
-    image: mongo:4.0
-    container_name: api-sigarra-mongo
-    ports:
-      - 27017:27017
+      - mongo
+  web-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    environment:
+      - PORT=${CONTAINER_PORT}
     volumes:
-      - ./data:/data/db
+      - ./src:/usr/src/api-sigarra/src
+    ports:
+      - "${HOST_PORT}:${CONTAINER_PORT}"
+    links:
+      - mongo
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile-test
+    environment:
+      - PORT=${CONTAINER_PORT}
+    volumes:
+      - ./src:/usr/src/api-sigarra/src
+      - ./test:/usr/src/api-sigarra/test
+    ports:
+      - "${HOST_PORT}:${CONTAINER_PORT}"
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
