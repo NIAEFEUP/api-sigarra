@@ -16,7 +16,7 @@ if(process.env.NODE_ENV === "production") {
     }
 }
 
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true} ).then(() => {
+mongoose.connect(MONGO_URI, {useNewUrlParser: true} ).then(() => {
     connected = true;
     console.log("====================================");
     console.log("Connected to Mongo DB");
