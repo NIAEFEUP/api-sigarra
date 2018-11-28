@@ -8,6 +8,10 @@ sudo: required
 services:
   - docker
 
+env:
+  - HOST_PORT=3000
+  - CONTAINER_PORT=3000
+
 script:
   - docker-compose up --exit-code-from test --build test mongo 
 
