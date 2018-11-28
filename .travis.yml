@@ -9,7 +9,7 @@ services:
   - docker
 
 script:
-  - docker-compose up --exit-code-from test test mongo 
+  - docker-compose up --exit-code-from test --build test mongo 
 
 cache:
   directories:
