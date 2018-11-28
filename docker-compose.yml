@@ -29,9 +29,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-test
-    args:
-      test_port: 3000
     environment:
+      - PORT=${CONTAINER_PORT}
       - NODE_ENV=test
     volumes:
       - ./src:/usr/src/api-sigarra/src

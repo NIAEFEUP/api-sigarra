@@ -1,10 +1,6 @@
 # Use node 8-LTS
 FROM node:8
 
-ARG test_port
-
-ENV PORT = $test_port
-
 RUN mkdir -p /usr/src/api-sigarra
 WORKDIR /usr/src/api-sigarra
 
