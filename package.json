@@ -6,13 +6,13 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon start",
-    "test": "mocha --exit"
+    "test": "mocha --exit",
     "lint": "eslint \"**/*.js\" --fix"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm lint",
-      "pre-push": "npm lint && npm test"
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint && npm run test"
     }
   },
   "repository": "http://github.com/NIAEFEUP/api-sigarra",
