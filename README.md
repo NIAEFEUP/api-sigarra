@@ -1,5 +1,13 @@
 # API - SIGARRA
 
+
+[![Build Status](https://travis-ci.org/imnotteixeira/sdg-be.svg?branch=develop)](https://travis-ci.org/imnotteixeira/sdg-be)
+[![GitHub issues](https://img.shields.io/github/issues/NIAEFEUP/api-sigarra.svg?style=for-the-badge)](https://github.com/NIAEFEUP/api-sigarra/issues)
+[![GitHub license](https://img.shields.io/github/license/NIAEFEUP/api-sigarra.svg?style=for-the-badge)](https://github.com/NIAEFEUP/api-sigarra/blob/develop/LICENSE)
+
+
+
+
 This API aims to provide access to information present on FEUP's 
 websystem SIGARRA, such as menus of the faculty's restaurants 
 and bars, ERASMUS' vacancies, access to your personal information, 
