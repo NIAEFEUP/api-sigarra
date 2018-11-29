@@ -18,12 +18,12 @@ describe("Basic Mocha Values Test", function () {
         (3 > 5).should.be.false;
     });
     
-    it('should have property name with value Figo', function(){
-        const car = {name:'Figo', Maker:'Ford'};
-        car.should.have.property('name').equal('Figo');
+    it("should have property name with value Figo", function(){
+        const car = {name:"Figo", Maker:"Ford"};
+        car.should.have.property("name").equal("Figo");
     });
     
-    it('Checking for null', function(){
+    it("Checking for null", function(){
         const car = null;
         //car.should.not.exist; (Cannot read property 'should' of null)
         should.not.exist(car);
