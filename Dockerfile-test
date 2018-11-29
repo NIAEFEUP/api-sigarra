@@ -1,0 +1,25 @@
+# Use node 8-LTS
+FROM node:8
+
+ARG TEST_PORT
+
+RUN mkdir -p /usr/src/api-sigarra
+WORKDIR /usr/src/api-sigarra
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+# Install Node Packages (only production if not in dev mode)
+RUN npm install
+
+# Copying app source
+COPY ./src ./src
+
+# Copying test suite
+COPY ./test ./test
+
+
+EXPOSE $TEST_PORT
+CMD ["npm", "run", "test"]

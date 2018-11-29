@@ -1,0 +1,47 @@
+version: "3"
+services:
+  web-prod:
+    build: 
+      context: .
+    volumes:
+      - ./src:/usr/src/api-sigarra/src
+    ports:
+      - ${HOST_PORT}:${CONTAINER_PORT}
+    environment:
+      - PORT=${CONTAINER_PORT}
+      - NODE_ENV=production
+    links:
+      - mongo
+  web-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    environment:
+      - PORT=${CONTAINER_PORT}
+      - NODE_ENV=development
+    volumes:
+      - ./src:/usr/src/api-sigarra/src
+    ports:
+      - "${HOST_PORT}:${CONTAINER_PORT}"
+    links:
+      - mongo
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile-test
+      args:
+        TEST_PORT: ${CONTAINER_PORT}
+    environment:
+      - PORT=${CONTAINER_PORT}
+      - NODE_ENV=test
+    volumes:
+      - ./src:/usr/src/api-sigarra/src
+      - ./test:/usr/src/api-sigarra/test
+    ports:
+      - "${HOST_PORT}:${CONTAINER_PORT}"
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
