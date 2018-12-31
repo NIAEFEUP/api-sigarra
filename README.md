@@ -36,7 +36,7 @@ The best approach to install `docker-compose` is to follow the offical guide [he
 ## Usage
 
 ### Development
-To start developing, you must create a file `.env` with environment variables, which are explained in more detail [below](#env-file).
+To start developing, you must create a file `.env` with environment variables, which are explained in more detail [below](#env-file-specification).
 
 After creating the `.env` file, you must build a dev server. 
 
@@ -82,7 +82,7 @@ If you have already built the images/containers before you can simply run:
 
 This environment doesn't have hot reloading and is made to be used in the main server which is running this aplication. 
 
-### [Env-File-Specification][env-file]
+### Env File Specification
 
 - `HOST_PORT`= The port where you will access in your machine (http://localhost:<HOST_PORT>)
 - `CONTAINER_PORT`= The port where the app will run inside the container (Can be the same as `HOST_PORT`)
@@ -110,4 +110,3 @@ The NIAEFEUP api-sigarra dev-team:
 [MIT](https://choosealicense.com/licenses/mit/)
 
 [license]: LICENSE
-[env-file]: Env-File-Specification
