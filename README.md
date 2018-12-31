@@ -1,7 +1,6 @@
 # API - SIGARRA
 
-
-[![Build Status](https://travis-ci.org/imnotteixeira/sdg-be.svg?branch=develop)](https://travis-ci.org/imnotteixeira/sdg-be)
+[![Build Status](https://img.shields.io/travis/niaefeup/api-sigarra/develop.svg?style=for-the-badge)](https://travis-ci.org/NIAEFEUP/api-sigarra)
 [![GitHub issues](https://img.shields.io/github/issues/NIAEFEUP/api-sigarra.svg?style=for-the-badge)](https://github.com/NIAEFEUP/api-sigarra/issues)
 [![GitHub license](https://img.shields.io/github/license/NIAEFEUP/api-sigarra.svg?style=for-the-badge)](https://github.com/NIAEFEUP/api-sigarra/blob/develop/LICENSE)
 
