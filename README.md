@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/NIAEFEUP/api-sigarra/develop.svg?style=for-the-badge)](https://travis-ci.org/NIAEFEUP/api-sigarra)
 [![GitHub issues](https://img.shields.io/github/issues/NIAEFEUP/api-sigarra.svg?style=for-the-badge)](https://github.com/NIAEFEUP/api-sigarra/issues)
-[![GitHub license](https://img.shields.io/github/license/NIAEFEUP/api-sigarra.svg?style=for-the-badge)](https://github.com/NIAEFEUP/api-sigarra/blob/develop/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/NIAEFEUP/api-sigarra.svg?style=for-the-badge)](https://github.com/NIAEFEUP/api-sigarra/blob/master/LICENSE)
 
 
 
@@ -95,18 +95,5 @@ This project uses `Node.js` with `Express.js` for the API routing and request-re
 
 The testing is done with `Mocha` and `Chai`.
 
-### Authors
-The NIAEFEUP api-sigarra dev-team:
-- [`André Rocha`](http://github.com/andrefmrocha);
-- [`Ângelo Teixeira`](http://github.com/imnotteixeira);
-- [`Carlos Nova Duarte`](http://github.com/carlosnovaduarte);
-- [`Henrique Lima`](http://github.com/reeckset);
-- [`José Silva`](http://github.com/krystalgamer);
-- [`Miguel Duarte`](http://github.com/miguelpduarte);
-- [`Tiago Fragoso`](http://github.com/tiagofragoso);
-- [`Tiago Verdade`](http://github.com/Tiagocv64);
-
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-[license]: LICENSE
+[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
