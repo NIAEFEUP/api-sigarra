@@ -1,4 +1,4 @@
-var request = require("request");
+var request = require("request-promise");
 var cheerio = require("cheerio");
 /*
 Cantines to Remove: 
@@ -8,31 +8,39 @@ Cantines to Remove:
  - Cantina de Belas Artes
  - Cantina de Vairão
 */
-function getPDF(url){
+async function getPDF(uri){
     var pdfLinks = []
-    request(url, (error, response, html)=>{
-        if(!error && response.statusCode == 200){
-            const $ = cheerio.load(html);
-            $('div.mobile').find('a').each(function(i, elem){
-                var cantine = $(this).html();
+    const options = {
+        uri,
+        transform: (body) => {
+            return cheerio.load(body);
+        }
+    }
+    return request(options)
+        .then($ => {
+            $('div.mobile > ul.lista > li > a').each((i, elem) => {
+                const el = $(elem)
+                const cantine = el.text();
                 if (
                     cantine != "Grill de Engenharia" &&
                     cantine != "Cantina de Ci&#xFFFD;ncias" &&
                     cantine != "Cantina de Letras" &&
                     cantine != "Cantina de Belas Artes" &&
                     cantine != "Cantina de Vair&#xFFFD;o"
-                )
-                {
-                    pdfLinks.push($(this).attr("href"));
+                ) {
+                    pdfLinks.push(el.attr('href'));
                 }
-                
             });
-        }
-        // console.log(pdfLinks);
-        console.log("lel");
-        return pdfLinks;
-    });
-}
+            console.log(pdfLinks);
+            return pdfLinks;
+        })
+        .catch((err)=>{
+            console.log(`Error: `, err);
+        })
+    
+
+        
+};
 
 async function test() {
     console.log("Hello")
