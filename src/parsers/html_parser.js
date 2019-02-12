@@ -7,6 +7,7 @@ Cantines to Remove:
  - Cantina de Letras
  - Cantina de Belas Artes
  - Cantina de Vairão
+ - Cantina de Engenharia
 */
 async function getPDF(uri){
     var pdfLinks = []
@@ -31,20 +32,22 @@ async function getPDF(uri){
                     pdfLinks.push(el.attr('href'));
                 }
             });
-            console.log(pdfLinks);
+            pdfLinks.forEach((elem, i) =>{
+                console.log(i, elem);
+                pdfLinks[i] = `https://sigarra.up.pt/sasup/pt/${elem}`
+            });
             return pdfLinks;
         })
         .catch((err)=>{
             console.log(`Error: `, err);
         })
     
-
-        
 };
 
 async function test() {
     console.log("Hello")
     var pdfs = await getPDF("https://sigarra.up.pt/sasup/pt/web_base.gera_pagina?P_pagina=265689");
+    console.log(pdfs);
     console.log("Its me");
 }
 

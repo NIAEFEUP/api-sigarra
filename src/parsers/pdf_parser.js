@@ -54,7 +54,37 @@ function parseMeals(meals)
     });
 }
 
-function readMeals(infile)
+
+function newReadMeals(infile)
+{
+    let buffer = fs.readFileSync(infile);
+    pdf(buffer).then(data =>  {
+        let menu = data.text;
+        let soups_regex = /Sopa(.+?)\n/gms
+        let meat_regex = /Carne(.+?)\n/gms
+        let fish_regex = /Pescado(.+?)\n/gms
+        let veggie_regex = /Vegetariana(.+?)\n/gms
+        let dates_regex = /\d+ a \d+/g;
+        let soups = menu.match(soups_regex);
+        let meats = menu.match(meat_regex);
+        let fish = menu.match(fish_regex);
+        let veggie = menu.match(veggie_regex);
+        let dates = menu.match(dates_regex);
+        for (let i = 0; i < veggie.length; i++)
+        {
+            soups[i] = soups[i].substr(soups[i].indexOf(" ") + 1);
+            meats[i] = meats[i].substr(meats[i].indexOf(" ") + 1);
+            fish[i] = fish[i].substr(fish[i].indexOf(" ") + 1);
+            veggie[i] = veggie[i].substr(veggie[i].indexOf(" ") + 1);
+        }
+        dates.forEach((date, index) => {
+            dates[index] = date.trim();
+            dates[index] = dates[index].split(/ a /g);
+        });
+        console.log(dates);
+    });
+}
+function oldReadMeals(infile)
 {
     let buffer = fs.readFileSync(infile);
     pdf(buffer).then(function(data){
@@ -91,4 +121,4 @@ function readMeals(infile)
     });
 }
 
-readMeals('test.pdf')
+newReadMeals('cantina.pdf')
