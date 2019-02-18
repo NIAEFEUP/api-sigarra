@@ -61,25 +61,11 @@ function handle_old_format(data) {
 		if(ementa == null) ementa = text.match(/Componente .*\n.+ \n(?: ?[0-9]{1,2} .*\n.*\n)+(?:.\n)*(?:[/\-()aA-zZ](?:.)*\n)*/);
         if(ementa !== null){
             ementa = ementa[0];
-            let start_sopa = ementa.lastIndexOf('SOPA');
-            let start_carne = ementa.lastIndexOf('CARNE');
-            if(start_sopa == -1 || start_carne == -1){
-                //Ementa so com prato do dia e pratos permanentes
-
-                let start_diario = ementa.lastIndexOf('Prato do dia');
-                let start_permanente = ementa.lastIndexOf('Pratos \npermanentes');
-				//Caso especial com dois espacos
-				if(start_permanente == -1) start_permanente = ementa.lastIndexOf('Pratos  \npermanentes');
-
-                if (start_diario == -1 || start_permanente == -1){
-                    throw start_diario + ' we fucked x2 ' + start_permanente;
-				}
-
-                console.log('top');
-
-            }
-            else console.log(ementa.substring(start_sopa, start_carne));
-
+			let sopas = ementa.match(/(?:SOPA|Sopa.*\n)(?:.*\n)*(?:CARNE|Carne)/);
+			if(sopas == null){
+				let pratos = ementa.match(//);
+			}
+			else console.log(sopas[0]);
         }
         else{
 			console.log(text);
