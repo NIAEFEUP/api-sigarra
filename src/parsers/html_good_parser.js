@@ -63,12 +63,10 @@ function handle_old_format(data) {
             ementa = ementa[0];
 			let sopas = ementa.match(/(?:SOPA|Sopa.*\n)(?:.*\n)*(?:CARNE|Carne)/);
 			if(sopas == null){
-				let pratos = ementa.match(//);
+				let pratos_dia = ementa.match(/Prato do dia .*\n(?:.+\n)+Pratos/);
 			}
-			else console.log(sopas[0]);
         }
-        else{
-			console.log(text);
+        else{ console.log(text);
             throw 'we fucked';
 		}
     });
