@@ -75,20 +75,24 @@ function handle_old_format(data) {
 
 }
 
+function handle_new_format(data){
+
+	let segunda = data.text_per_page[0].match(/Segunda(.*)\n(.*\n)+Terça/)[0];
+	let carne = segunda.match(/Carne(?:.*)/)[0];
+	console.log(carne);
+}
+
 function handle_pdf(data) {
     //Takes blue pill or red pill not both
     let is_old_format = data.text.match('Os pratos constantes na ementa poderão possuir ou conter vestígios dos alergénios abaixo indicados:');
     let is_new_format = data.text.match('A sua refeição contém ou pode conter as seguintes substâncias ou produtos e seus derivados');
 
     if(is_old_format !== is_new_format){
-        if (is_old_format == null){
-            console.log('new format');
-        }
+        if (is_old_format == null) handle_new_format(data);
         else handle_old_format(data);
     }
     else{
-        if(is_old_format == undefined) console.log('terceiro formato xpto');
-        else throw ('WHAT THE FUCK');
+        //if(is_old_format !== undefined) throw ('WHAT THE FUCK');
     }
 }
 
