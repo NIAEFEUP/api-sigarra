@@ -48,6 +48,7 @@ services:
   parser:
     build: 
       context: .
+      dockerfile: Dockerfile-test
     command: npm run parser
     volumes:
       - ./lib:/usr/lib/api-sigarra/lib
