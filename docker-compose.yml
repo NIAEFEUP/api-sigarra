@@ -4,7 +4,7 @@ services:
     build: 
       context: .
     volumes:
-      - ./src:/usr/src/api-sigarra/src
+      - ./lib:/usr/lib/api-sigarra/lib
     ports:
       - ${HOST_PORT}:${CONTAINER_PORT}
     environment:
@@ -20,7 +20,7 @@ services:
       - PORT=${CONTAINER_PORT}
       - NODE_ENV=development
     volumes:
-      - ./src:/usr/src/api-sigarra/src
+      - ./lib:/usr/lib/api-sigarra/lib
     ports:
       - "${HOST_PORT}:${CONTAINER_PORT}"
     links:
@@ -35,8 +35,8 @@ services:
       - PORT=${CONTAINER_PORT}
       - NODE_ENV=test
     volumes:
-      - ./src:/usr/src/api-sigarra/src
-      - ./test:/usr/src/api-sigarra/test
+      - ./lib:/usr/lib/api-sigarra/lib
+      - ./test:/usr/lib/api-sigarra/test
     ports:
       - "${HOST_PORT}:${CONTAINER_PORT}"
     links:

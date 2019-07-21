@@ -2,9 +2,9 @@
   "name": "api-sigarra",
   "version": "1.0.0",
   "description": "Developing an API for the Sigarra platform of the Faculty of Engineering of the University of Porto",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node lib/index.js",
     "dev": "nodemon start",
     "test": "mocha --exit",
     "lint": "eslint \"**/*.js\" --fix"

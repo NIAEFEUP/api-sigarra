@@ -3,8 +3,8 @@ FROM node:8
 
 ARG TEST_PORT
 
-RUN mkdir -p /usr/src/api-sigarra
-WORKDIR /usr/src/api-sigarra
+RUN mkdir -p /usr/lib/api-sigarra
+WORKDIR /usr/lib/api-sigarra
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -15,7 +15,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copying app source
-COPY ./src ./src
+COPY ./lib ./lib
 
 # Copying test suite
 COPY ./test ./test
