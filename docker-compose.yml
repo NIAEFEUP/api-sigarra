@@ -48,6 +48,6 @@ services:
   parser:
     build: 
       context: .
-      dockerfile: Dockerfile-parse
+    command: npm run parser
     volumes:
       - ./lib:/usr/lib/api-sigarra/lib
