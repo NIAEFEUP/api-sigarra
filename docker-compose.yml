@@ -45,3 +45,9 @@ services:
     image: mongo
     ports:
       - "27017:27017"
+  parser:
+    build: 
+      context: .
+      dockerfile: Dockerfile-parse
+    volumes:
+      - ./lib:/usr/lib/api-sigarra/lib

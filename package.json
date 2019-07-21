@@ -7,7 +7,8 @@
     "start": "node lib/index.js",
     "dev": "nodemon start",
     "test": "mocha --exit",
-    "lint": "eslint \"**/*.js\" --fix"
+    "lint": "eslint \"**/*.js\" --fix",
+    "parser": "node lib/interactors/pdf_parser.js"
   },
   "husky": {
     "hooks": {
