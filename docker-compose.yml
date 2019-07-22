@@ -48,14 +48,14 @@ services:
   parser:
     build: 
       context: .
-      dockerfile: Dockerfile-test
+      dockerfile: Dockerfile-dev
     command: npm run parser
     volumes:
       - ./lib:/usr/lib/api-sigarra/lib
   processor:
     build: 
       context: .
-      dockerfile: Dockerfile-test
+      dockerfile: Dockerfile-dev
     command: npm run processor
     volumes:
       - ./lib:/usr/lib/api-sigarra/lib
