@@ -1,6 +1,6 @@
 const pdfURL = require("./html_parser");
 const request = require("request");
-const pdfParse = require("./pdf_parser");
+const pdfParse = require("./../lib/interactors/pdf_parser");
 
 const cantineUrl = "https://sigarra.up.pt/sasup/pt/web_base.gera_pagina?P_pagina=265689";
 
@@ -15,8 +15,8 @@ request
     
 async function pdfParsing() {
     let pdfs = await pdfURL.getPDF(cantineUrl);
-    pdfParse.newReadMeals(pdfs[4]);
-    // console.log(pdfs);
+    console.log(pdfs);
+    
 }
 
 pdfParsing();

@@ -1,13 +1,12 @@
 var request = require("request-promise");
 var cheerio = require("cheerio");
+const cantineUrl =
+  "https://sigarra.up.pt/sasup/pt/web_base.gera_pagina?P_pagina=265689";
+
 /*
 Cantines to Remove: 
  - Grill Engenharia
- - Cantina de Ciencias
- - Cantina de Letras
- - Cantina de Belas Artes
  - Cantina de Vairão
- - Cantina de Engenharia
 */
 async function getPDF(uri){
     var pdfLinks = [];
@@ -23,10 +22,6 @@ async function getPDF(uri){
                 const el = $(elem);
                 const cantine = el.text();
                 if (
-                    cantine != "Grill de Engenharia" &&
-                    cantine != "Cantina de Ci&#xFFFD;ncias" &&
-                    cantine != "Cantina de Letras" &&
-                    cantine != "Cantina de Belas Artes" &&
                     cantine != "Cantina de Vair&#xFFFD;o"
                 ) {
                     pdfLinks.push(el.attr("href"));
@@ -42,6 +37,3 @@ async function getPDF(uri){
         });
     
 }
-
-const cantineUrl = "https://sigarra.up.pt/sasup/pt/web_base.gera_pagina?P_pagina=265689";
-getPDF(cantineUrl);
