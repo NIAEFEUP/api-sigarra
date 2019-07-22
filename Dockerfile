@@ -1,5 +1,4 @@
-# Use node 8-LTS
-FROM node:8
+FROM node:10.16.0
 
 RUN mkdir -p /usr/lib/api-sigarra
 WORKDIR /usr/lib/api-sigarra

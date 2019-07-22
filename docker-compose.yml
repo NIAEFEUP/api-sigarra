@@ -58,4 +58,5 @@ services:
       dockerfile: Dockerfile-test
     command: npm run processor
     volumes:
+      - ./lib:/usr/lib/api-sigarra/lib
       - ./processors:/usr/lib/api-sigarra/processors
