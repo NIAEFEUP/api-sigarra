@@ -4,10 +4,9 @@ const should = require("chai").should();
 const mongoose = require("mongoose");
 
 describe("Testing save and find function from repository", function() {
-    it("should save the model to the repository and then retrieve it properly", function(){
+    it("should save the model to the repository and then retrieve it properly", async function(){
         let meal = {
-            id: mongoose.Types.ObjectId(),
-            soup: "Sopa de bacalhau",
+            soup: "batata frita",
             meat: "Vitela assada",
             fish: "Sardinhas",
             veggie: "Salada",
@@ -16,8 +15,8 @@ describe("Testing save and find function from repository", function() {
             lunch: true
         };
         mealsRepository.save(meal);
-        let savedMeal = mealsRepository.find(meal);
-        // console.log(savedMeal);
+        let savedMeal = await mealsRepository.find(meal);
+        console.log(savedMeal);
         // should.equal(savedMeal, !null);
     });
 });
