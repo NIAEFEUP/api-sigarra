@@ -13,7 +13,8 @@ module.exports = {
             uri,
             transform: body => {
                 return cheerio.load(body);
-            }
+            },
+            encoding: 'latin1'
         };
         return request(options)
             .then($ => {
