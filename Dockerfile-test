@@ -30,6 +30,7 @@ COPY ./lib ./lib
 # Copying test suite
 COPY ./test ./test
 
+COPY ./web ./web
 
 EXPOSE $TEST_PORT
 CMD ["npm", "run", "test"]

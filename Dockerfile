@@ -24,6 +24,7 @@ RUN npm install --only=production
 
 # Copying app source
 COPY ./lib ./lib
+COPY ./web ./web
 
 # Copying .env file because it is necessary for the app to run
 COPY .env ./

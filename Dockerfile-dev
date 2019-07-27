@@ -32,6 +32,7 @@ COPY .env ./
 
 # Copying test suite
 COPY ./test ./test
+COPY ./web ./web
 
 
 EXPOSE $PORT
