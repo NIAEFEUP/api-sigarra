@@ -1,6 +1,6 @@
 const mealsRepository = require("./../lib/repository/meals_repository");
 const chai = require("chai");
-const should = chai.should();
+const should = chai.should()
 
 describe("Testing repository functions", function() {
     let meal = {
