@@ -29,5 +29,13 @@ describe("Testing repository functions", function() {
         await mealsRepository.save(meal);
         let deletion = await mealsRepository.delete(meal);
         should.equal(deletion.deletedCount, 1);
+    });    
+
+    it("should have the model at first but then it should have been deleted", async function(){
+        meal.meat = "Vitela";
+        await mealsRepository.save(meal);
+        let deletion = await mealsRepository.deleteDate(meal.day);
+        should.equal(deletion.deletedCount, 1);
     });
+
 });
