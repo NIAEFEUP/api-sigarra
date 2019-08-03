@@ -43,7 +43,7 @@ services:
       - ./test:/usr/lib/api-sigarra/test
     ports:
       - "${HOST_PORT}:${CONTAINER_PORT}"
-    links:
+    depends_on:
       - mongo
   mongo:
     image: mongo
