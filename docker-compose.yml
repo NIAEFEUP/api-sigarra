@@ -28,6 +28,8 @@ services:
       - "${HOST_PORT}:${CONTAINER_PORT}"
     links:
       - mongo
+    depends_on:
+      - mongo
   test:
     build:
       context: .
@@ -66,3 +68,5 @@ services:
       - ./processors:/usr/lib/api-sigarra/processors
     environment:
       - MONGO_URI=mongodb://mongo:27017/prod
+    depends_on:
+      - mongo
