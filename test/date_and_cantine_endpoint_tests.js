@@ -34,5 +34,7 @@ describe("Testing get endpoint", function(){
                 result.should.have.status(404);
             });
     });
-
+    this.afterAll(function(){
+        mealsRepository.delete(meal);
+    });
 });
