@@ -9,7 +9,7 @@ describe("Testing repository functions", function() {
         fish: "Sardinhas",
         veggie: "Salada",
         cantine: "FEUP",
-        day: new Date("1995-12-17T03:24:00"),
+        day: "1995-12-17",
         lunch: true
     };
     it("should save the model to the repository and then retrieve it properly", async function(){

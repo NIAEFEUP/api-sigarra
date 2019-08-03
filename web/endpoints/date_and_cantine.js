@@ -8,7 +8,6 @@ app.get("/meals/:day/:cantine", async (req, res) => {
         cantine: req.params.cantine
     };
     let meal = await mealsRepository.find(query);
-    console.log(meal);
     if(meal != null)
         return res.status(200).send(meal);
     return res.status(404).send("Meal for said day and cantine not found");
